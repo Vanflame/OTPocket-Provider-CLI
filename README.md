@@ -19,8 +19,18 @@ Enter the 6-character activation code from your provider dashboard
 
 > If Windows shows *"Windows protected your PC"*, click **More info → Run anyway**.
 
-To update to a new version later, run the same `curl` and `install` lines again.
-Your pairing is kept.
+## Update
+
+```bat
+otpagent update
+```
+This downloads the latest release, checks it, and swaps it in, keeping your pairing
+and settings. Then close and reopen `otpagent`. The dashboard tells you when an
+update is available.
+
+> **Coming from v1.0.0?** That version doesn't have `update` yet. Update once by
+> re-running the `curl` and `install` lines above (close otpagent first). After that,
+> `otpagent update` works.
 
 ## Install: Orange Pi / Linux (arm64)
 
