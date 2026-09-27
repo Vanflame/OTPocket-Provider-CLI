@@ -3,22 +3,24 @@
 Connects a GSM modem pool (16 / 32 / 64 ports) to your OTPocket provider account.
 It shows a live dashboard of every SIM and forwards incoming SMS instantly.
 
-## Install: Windows
+## Install: Windows (Command Prompt only)
 
-1. Download **`otpagent-windows-x64.exe`** from the [latest release](../../releases/latest).
-2. Open **Command Prompt** in your Downloads folder and run:
-   ```bat
-   otpagent-windows-x64.exe install
-   ```
-3. Close any other modem software (e.g. Dangs Modem), then run:
-   ```bat
-   otpagent
-   ```
-4. Enter the 6-character activation code from your provider dashboard
-   (**Inventory → Register device → Gateway**, set **Max SIMs** to your port count).
+Close other modem software (e.g. Dangs Modem) first. Then run, one line at a time:
+
+```bat
+cd /d %USERPROFILE%\Downloads
+curl -L -o otpagent-windows-x64.exe https://github.com/Vanflame/OTPocket-Provider-CLI/releases/latest/download/otpagent-windows-x64.exe
+otpagent-windows-x64.exe install
+otpagent
+```
+
+Enter the 6-character activation code from your provider dashboard
+(**Inventory → Register device → Gateway**; leave **Max SIMs** blank to auto-detect the pool size).
 
 > If Windows shows *"Windows protected your PC"*, click **More info → Run anyway**.
-> This happens with new releases until Microsoft has reviewed them.
+
+To update to a new version later, run the same `curl` and `install` lines again.
+Your pairing is kept.
 
 ## Install: Orange Pi / Linux (arm64)
 
